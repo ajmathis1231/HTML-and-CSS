@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tables</title>
+
+</head>
+
+<body>
+<p>Basic Table Structure</p>
+<table>
+	<tr>
+		<td>15</td>
+		<td>15</td>
+		<td>30</td>
+	</tr>
+
+	<tr>
+		<td>45</td>
+		<td>60</td>
+		<td>45</td>
+	</tr>
+
+	<tr>
+		<td>60</td>
+		<td>90</td>
+		<td>90</td>
+	</tr>
+</table>
+<p>TD stands for Table Data.  TR stands for Table Row.</p>
+
+<h1>Table Headings</h1>
+<p>The th element is used like the td element but its purpose is to represent the heading for either a column or a row.  If a cell needs to be blank us a td or th open tag followed by a close tag.</p>
+
+<table>
+	<tr>
+	<th></th>
+	<th scope="col">Saturday</th>
+	<th scope="col">Sunday</th>
+	</tr>
+
+	<tr>
+		<th scope:="row">Tickets Sold:</th>
+		<td>120</td>
+		<td>135</td>
+	</tr>
+
+	<tr>
+		<th scope="row">Total Sales:</th>
+		<td>$600</td>
+		<td>$675</td>
+	</tr>
+</table>
+
+<p>Cells spanning multiple columns and rows</p>
+
+<table>
+	<tr>
+		<th></th>
+		<th scope="col">9am</th>
+		<th scope="col">10am</th>
+		<th scope="col">11am</th>
+		<th scope="col">12am</th>
+	</tr>
+
+	<tr>
+	<th scope="row">Monday</th>
+	<td colspan="2" ="2">Geography</td>
+	<td>Math</td>
+	<td>Art</td>
+	</tr>
+
+	<tr>
+	<th scope="row">Tuesday</th>
+	<td colspan="3" ="3">Gym</td>
+	<td>Home Ec</td>
+	</tr>
+</table>
+
+<p>The colspan tag allows you to span a value across a set number of columns.</p>
+<p>Rowspan is the same but for spanning up and down across multiple rows.</p>
+
+<table>
+
+	<tr>
+		<th></th>
+		<th>ABC</th>
+		<th>BBC</th>
+		<th>CNN</th>
+	</tr>
+
+	<tr>
+		<th>6pm-7pm</th>
+		<td rowspan="2">Movie</td>
+		<td>Comedy</td>
+		<td>News</td>
+	</tr>
+
+	<tr>
+		<th>7pm-8pm</th>
+		<td>Sport</td>
+		<td>Current Affairs</td>
+	</tr>
+
+</table>
+
+<table>
+	<thead>
+		<tr>
+			<th>Date</th>
+			<th>Income</th>
+			<th>Expenditure</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>1st January</th>
+			<td>250</td>
+			<td>436</td>
+		</tr>
+		<tr>
+			<th>2nd January</th>
+			<td>285</td>
+			<td>348</td>
+		</tr>
+		<tr>
+			<th>3rd January</th>
+			<td>260</td>
+			<td>42</td>
+		</tr>
+		<tr>
+			<th>4th January</th>
+			<td>290</td>
+			<td>38</td>
+		</tr>
+		<tr>
+			<th>5th January</th>
+			<td>310</td>
+			<td>115</td>
+		</tr>
+		<tr>
+			<th>6th January</th>
+			<td>168</td>
+			<td>14</td>
+		</tr>
+		<tr>
+			<th>7th January</th>
+			<td>226</td>
+			<td>20</td>
+		</tr>
+		<tr>
+			<th>8th January</th>
+			<td>253</td>
+			<td>37</td>
+		</tr>
+		<tr>
+			<th>9th January</th>
+			<td>294</td>
+			<td>33</td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+		<th></th>
+		<td>7824</td>
+		<td>1241</td>
+	</tfoot>
+</table>
+
+</body>
+</html>

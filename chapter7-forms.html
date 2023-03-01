@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Forms</title>
+</head>
+
+<body>
+
+	<h1>Forms - How to collect information from visitors, different kids of form controls and new HTML5 form controls.</h1>
+
+	<p>Form control live inside the form element (open and close tags).  This  element should always carry the "Action" attribute and usually has method and id as well.</p>
+	<p>The action element requires an action attribute.  Its value is the URL for the page on the server that will receive the information in the form when it is submitted.</p>
+	<p>Two types of methods:
+	Get and Post</p>
+	<p>Get Method: The values from the form are added to the end of URL specified in the action attribute and is ideal fro short forms and when you are just retrieving data from the web server (not when you are adding/deleting info from a database)</p>
+	<p>Post method are sent in HTTP headers.  As a rule of thumb you should use the post method if your form allows users to upload a file, is very long, contains sensitive data, adds information to, or deletes info from a database.</p>
+	<p>If no method is selected, get is default.</p>
+
+	<h2>Examples</h2>
+
+	<h3>Text Input</h3>
+	<form action="http://www.example.com/login.php">
+		<p>Username:
+			<input type="text" name="username" maxlength="30" />
+		</p>
+		<p>Password:
+			<input type="password" name="password" maxlength="30" />
+		</p>
+	</form>
+
+	<p>Basic layout consists of open tag form including action (web address of database). followed by ,p,Username: (or whatever the field is you're asking for.) Next line is the Input line which gets Type, Name and maxLength.</p>
+	<p>Type=text for usernames or other unsecure data.  password for secure answers.</p>
+	<p>name=whether its a username or password</p>
+	<p>MaxLength=duh.</p>
+	<p>for full security, passwords, or any secure data, needs to have SSL(Secure Sockets Layer) to protect the data.</p>
+
+	<h3>Text Area</h3>
+	<p>Text area is a free form text box answer.</p>
+	<form action="http://www.example.com/comments.php">
+		<p>What did you think of this gig>
+			<br />
+			<textarea name="comments" cols="20" rows="4">Enter your Comments...</textarea>
+		</p>
+	</form>
+
+	<h3>Radio Button Input</h3>
+	<form action="http://www.example.com/profile.php">
+		<p>Please select your favorite genre:
+			<br />
+			<input type="radio" name="genre" value="rock" checked="checked" /> Rock
+			<input type="radio" name="genre" value="pop" /> Pop
+			<input type="radio" name="genre" value="jazz" /> Jazz
+		</p>
+	</form>
+	<p>The "checked=checked" means the default selection is that selection.</p>
+	<p>Only one selection can be made with radio button.  Check box allows none or multiple selections.</p>
+
+	<form action="http://www.example.com/profile.php">
+		<p>Please select your favorite music service(s):
+			<br />
+			<input type="checkbox" name="service" value="itunes" checked="checked" /> iTunes
+			<input type="checkbox" name="service" value="last.fm" /> Last.Fm
+			<input type="checkbox" name="service" value="spotify" /> Spotify
+		</p>
+	</form>
+
+	<h3>Drop Down List Box</h3>
+	<p>Drop down list allows users to select one option from a drop down list.  The select element is used to create a drop down list box.  It contains two or more option elements.</p>
+	<form action="http://www.example.com/profile.php">
+		<p>What device do you listen to music on?
+			<select name="devices">
+				<option	value="ipod"> iPod </option>
+				<option value="radion"> Radio</option>
+				<option value="Computer"> Computer</option>
+			</select>
+			</p>
+	</form>
+
+	<p><b>Things to consider:</b> <br /> If users need to see all options at once radio buttons are best.  <br /> If there is a long list of options, drop down lists work better.</p>
+
+	<h3>Multi Select Box</h3>
+	<p>This is a dropdown box that you can select more than one option by holding down control on windows and command on mac</p>
+	<form action="http://www.example.com/profile.php">
+		<p>Do you play any of the following instruments? (You can select more than one option by holding down control on PC or command on Mac while selecting different options)</p>
+		<select name="instruments" size="3" multiple="multiple">
+			<option value="guitar" selected="selected">Guitar</option>
+			<option value="drums">Drums</option>
+			<option value="keyboard"> Keyboard</option>
+			<option value="Bass">Bass</option>
+		</select>
+	</form>
+
+	<h3>File Input Box</h3>
+	<p>Here we can provide a place for a user to upload a file</p>
+	<form action="http://www.example.com/upload.php" method="post">
+		<p>Upload your song in MP3 format.</p>
+		<input type="file" name="user-song" /><br />
+		<input type="submit" name="Upload" />
+	</form>
+
+	<form action="http://www.example.com/subscribe.php">
+		<p>Subscribe to our email list:</p>
+		<input type="text" name="email" />
+		<input type="submit" name="subscribe" value="Subscribe" />
+	</form>
+
+	<form action="http://www.example.com/subscribe.php">
+		<p>Subscribe to our email list:</p>
+		<input type="text" name="email" />
+		<input type="image" src="Images/subscribe.png">
+	</form>
+	<p>Button and Hidden Controls <br />The button element was introduced to allow users more control over how their buttons appear, and to allow other elements to apear inside the buttone.  This means that you can combine text and images between the opening and closing tags.  Effectively a DIY designed button combining text and an image into one button.</p>
+	<form action="http://www.example.com/add.php">
+		<button><img src="images/add.png" alt="add" width="50" height="50">Add</button>
+		<input type="hidden" name="bookmark" value="lyrics" />
+	</form>
+
+	<h3>Labeling Form Controls</h3>
+	<p>When introducing form controls the code was kept simple by indicating the purpose of each on in text next to it.  However, each form control should have its own "label" element as this makes the form accessible to vision impaired users.  <br /> The "label element can be used in two ways:<br />1. Wrap around both the text description and the form input.<br />2. Be kept separate from the form control and use the for attribute to indicate which form control it is a label for.</p>
+	<label>Age: <input type="text" name="age" /></label>
+	<br/>
+	Gender: <input id="female" type="radio" name="gender" value="f">
+	<label for="female">Female</label>
+	<input id="male" type="radio" name="gender" value="m">
+	<label for="male">Male</label>
+
+	<h3>Fieldset groupings</h3>
+	<p>You can group related form controls together inside the "fieldset" element.  Helpful for longer forms.  Most browsers will show the fieldset with a line around the edge to show how they are related.  The appearance of these lines can be adjusted using CSS.<br />The "legend" element come directly after the opening "fieldset" tag and contains a caption which helps identify the purpose of that group of form controls</p>
+
+	<fieldset>
+		<legend>Contact Details</legend>
+			<label>Email:<br />
+				<input type="text" name="email" /></label><br />
+			<label>Mobile:<br /> 
+				<input type="text" name="mobile" /></label><br />
+			<label>Telephone:<br />
+				<input type="text" name="telephone" /></label>
+	</fieldset>
+
+	<h3>Form Validation</h3>
+		<p>Validation typically has been done using js but HTML5 allows it to be done in HTML in the browser.<br />Validating helps ensure the info entered will be understood by he server receiving the form which reduces the work the server has to do and enables users to see if there are any problems with the form faster than if the validation was done server side.</p>
+		<form action="http://www.example.com/login/" method="post">
+			<label for="username">Username:</label>
+			<input type="text" name="username" required="required" /><br />
+			<label for="password">Password:</label>
+			<input type="password" name="password" required="required" />
+			<input type="submit" name="Submit" />
+		</form>
+
+	<h3>Date Input</h3>
+		<p>HTML 5 made it possible to standardize the way that some information is gathered.  So you'll still use a form but its input type will be date.</p>
+		<form action="http://www.example.com/bookings/" method="post">
+			<label for="username">Departure date:</label>
+			<input type="date" name="depart" />
+			<input type="submit" name="Submit" />
+		</form>
+
+	<h3>Search and Placeholders</h3>
+		<form action="http://www.example.com/search.php">
+			<p>Search:</p>
+			<input type="search" name="search" placeholder="Enter Keyword" />
+			<input type="submit" value="Search">
+		</form>
+
+	<h2>Chapter example</h2>
+	<fieldset>
+		<legend>Your Details:</legend>
+		<label>Name:
+			<input type="text" name="name" size="30" maxlength="100">
+		</label>
+		<br />
+		<label>Email:
+			<input type="text" name="email" size="30" maxlength="100">
+		</label>
+	</fieldset>
+	<br />
+	<fieldset>
+		<legend>Your Review:</legend>
+		<p>
+			<label for="hear-about">How did you hear about us?</label>
+				<select name="referrer" id="hear-about">
+					<option value="google">Google</option>
+					<option value="friend">Friend</option>
+					<option value="advert">Advert</option>
+					<option value="other">Other</option>
+				</select>
+		</p>
+		<p>
+			Would you visit again?<br />
+			<input type="radio" name="rating" value="yes" />
+			<label for="yes">Yes</label>
+			<input type="radio" name="rating" value="no" />
+			<label for="yes">No</label>
+			<input type="radio" name="rating" value="maybe" />
+			<label for="yes">Maybe</label>
+		</p>
+		<p>
+			Comments:<br />
+			<textarea rows="4" cols="40" id="comments">
+				Comments:
+			</textarea>
+		</p>
+		<p>
+			Sign up for email updates			
+				<input type="checkbox" checked="checked">
+				<input type="submit" value="Submit Review" /> 
+		</p>
+
+
+
+
+	</fieldset>
+</form>
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

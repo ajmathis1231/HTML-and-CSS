@@ -1,0 +1,24 @@
+.topnav{
+				text-align: center;
+				background-color: dodgerblue;
+				display: flex;
+				justify-content: space-around;
+				padding: 10px;
+				font-size: 20px;
+
+
+
+			}
+h1 {
+	text-align: center;
+	color: red;
+}
+p {
+	/*background-color: rgba(255, 99, 71, 0.8);*/
+	border: 4px solid grey; padding: 25px;
+
+}
+body {
+	background-color: rgba(176, 216, 230, 0.0);
+}
+/* background-image: url("example.gif"); this is how you make an image the background.  You can also set background-image to just one element, ie <p>.*/
